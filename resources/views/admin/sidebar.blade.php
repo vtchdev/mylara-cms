@@ -105,6 +105,24 @@
 
           </li>
 
+            <!-- Components -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">სტატიკური გვერდები</span></li>
+            <!-- Cards -->
+            <li class="menu-item">
+              <a href="{{ url('pages')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-archive"></i>
+                <div data-i18n="Basic">გვერდები</div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="{{ url('pages/add')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-add-to-queue"></i>
+                <div data-i18n="Basic">გვერდის დამატება</div>
+              </a>
+            </li>
+
+
 
               <!-- Misc -->
               <li class="menu-header small text-uppercase"><span class="menu-header-text">დახმარების ცენტრი</span></li>

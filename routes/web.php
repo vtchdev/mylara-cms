@@ -55,7 +55,7 @@ Route::get('/edit_blog_post/{id}' , [AdminController::class , 'edit_blog_post'])
 Route::post('/edit_blog_post_confirm/{id}' , [AdminController::class , 'edit_blog_post_confirm']);
 
 
-Route::get('/search', 'App\Http\Controllers\AdminController@search')->name('admin_search');
+Route::get('/search', 'App\Http\Controllers\AdminController@admin_search')->name('admin_search');
 
 // BLOG CATEGORY ROUTE
 Route::get('/blog/category' , [AdminController::class , 'blog_category_page']);
@@ -64,8 +64,14 @@ Route::get('/delete_blog_category/{id}' , [AdminController::class , 'delete_blog
 Route::get('/edit_blog_category/{id}' , [AdminController::class , 'edit_blog_category']);
 Route::post('/edit_blog_category_confirm/{id}' , [AdminController::class , 'edit_blog_category_confirm']);
 
-
 Route::get('/blog/category/{id}' , [AdminController::class , 'blog_category_page_show']);
+
+// PAGES ROUTE
+Route::get('/pages' , [AdminController::class, 'Page_index']);
+Route::get('/pages/add' , [AdminController::class, 'page_admin_add']);
+Route::post('/add_page_confirm' , [AdminController::class , 'add_page_confirm']);
+
+
 
 
 });

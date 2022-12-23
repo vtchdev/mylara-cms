@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Article;
+use App\Models\Page;
+
 use App\Models\blog_category;
 
 class AdminController extends Controller
@@ -175,5 +177,36 @@ class AdminController extends Controller
 
         // Return the search view with the resluts compacted
         return view('admin.blog.serach', compact('articles'));
+    }
+
+    public function page_index()
+    {
+        $pages=page::All();
+        return view('admin.page.index' , compact ('pages'));
+    }    
+
+    public function page_admin_add()
+    {
+        return view('admin.page.page_add');
+    }
+
+    public function add_page_confirm(request $request)
+    {
+        $page=new page;
+        $page->title=$request->title;
+        $page->slug=$request->slug;
+        $page->body=$request->body;
+        $page->seoname=$request->seoname;
+        $page->metabody=$request->metabody;
+
+        $image=$request->image;
+        $imagename=time().'.'.$image->getCLientOriginalExtension();
+        $request->image->move('pageimg' , $imagename);
+        $page->image=$imagename;
+
+        $page->save();
+
+        return redirect()->back()->with('message' , 'გვერდი წარმატებით დაემატა');
+
     }
 }

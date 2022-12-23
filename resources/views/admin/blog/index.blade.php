@@ -17,10 +17,16 @@
            <div class="container-xxl flex-grow-1 container-p-y">
 
 <!-- / Content -->
+@if(session()->has('message'))
 
+<div class="alert alert-success">
+    <button type="button" class="close" data-danger="alert" aria-hidden="true"> x </button>
+{{ session()->get('message') }}
+</div>
+@endif
  <!-- Bootstrap Table with Header - Light -->
  <div class="card">
-    <h5 class="card-header">კატეგორიები</h5>
+    <h5 class="card-header">სტატიები</h5>
     <div class="table-responsive text-nowrap">
       <table class="table">
         <thead class="table-light">
@@ -33,13 +39,14 @@
 
         </thead>
         <tbody class="table-border-bottom-0">
-          
-           
-                
-           
+
+
+
+@foreach ($articles as $article)
+
             <tr>
-                <td>ტიტლე ჰერე</td>
-              
+                <td>{{  $article->title }}</td>
+
                 <td><span class="badge bg-label-primary me-1">აქტიური</span></td>
                 <td>
                   <div class="dropdown">
@@ -47,10 +54,10 @@
                       <i class="bx bx-dots-vertical-rounded"></i>
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="javascript:void(0);"
+                      <a class="dropdown-item" href="{{ url('edit_blog_post' , $article->id) }}"
                         ><i class="bx bx-edit-alt me-1"></i> ჩასწორება</a
                       >
-                      <a class="dropdown-item" onClick="confirm('ნამდვილად გსურთ წაშლა?')"  href=""
+                      <a class="dropdown-item" onClick="confirm('ნამდვილად გსურთ წაშლა?')"  href="{{ url('delete_blog_post', $article->id) }}"
                         ><i class="bx bx-trash me-1"></i> წაშლა</a
                       >
                     </div>
@@ -58,7 +65,8 @@
                 </td>
               </tr>
               <tr>
-               
+                @endforeach
+
         </tbody>
       </table>
     </div>

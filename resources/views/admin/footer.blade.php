@@ -6,25 +6,23 @@
         <script>
           document.write(new Date().getFullYear());
         </script>
-        , made with ❤️ by
-        <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+        , Made with ❤️ by IMC.GE | Author:
+        <a href="https://vtch.dev" target="_blank" class="footer-link fw-bolder">vtch.dev</a>
       </div>
       <div>
-        <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-        <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
 
         <a
-          href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+          href="https://github.com/vtchdev/LanCMS-Laravel"
           target="_blank"
           class="footer-link me-4"
-          >Documentation</a
+          >დოკუმენტაცია</a
         >
 
         <a
-          href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+          href="https://vtch.dev/contact/"
           target="_blank"
           class="footer-link me-4"
-          >Support</a
+          >დახმარება</a
         >
       </div>
     </div>
@@ -43,14 +41,14 @@
 </div>
 <!-- / Layout wrapper -->
 
-<div class="buy-now">
+{{-- <div class="buy-now">
 <a
 href="https://imc.ge/contact/"
 target="_blank"
 class="btn btn-danger btn-buy-now"
 >დახმარება</a
 >
-</div>
+</div> --}}
 
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->

@@ -26,20 +26,25 @@
         {{ session()->get('message') }}
         </div>
     @endif
+
         <div class="card-header d-flex justify-content-between align-items-center">
           <h5 class="mb-0">კატეგორიის დამატება</h5>
         </div>
         <div class="card-body">
-          <form action="{{ url('add_category_blog') }}" method="POST">
+          <form action="{{ url('edit_blog_category_confirm' , $blog_category_update->id) }}" method="POST">
 @csrf
             <div class="mb-3">
               <label class="form-label" for="basic-default-fullname">კატეგორიის დასახელება</label>
-              <input type="text" name="name" class="form-control" id="basic-default-fullname" placeholder="კატეგორიის დასახელება" />
+              <input type="text" name="name" class="form-control" id="basic-default-fullname" value="{{ $blog_category_update->name }}" />
             </div>
 
 
-            <button type="submit" class="btn btn-success">დამატება</button>
+
           </form>
+
+          <button type="submit" class="btn btn-success">კატეგორიის განახლება</button>
+          <a  href="{{ url('blog/category') }}" type="button"  class="btn btn-primary">ახალი კატეგორიის დამატება</a>
+
         </div>
       </div>
     </div>
@@ -63,7 +68,7 @@
         </thead>
         <tbody class="table-border-bottom-0">
 
-            @foreach ($blog_category as $blog_category)
+            @foreach ($blog_categories as $blog_category)
 
 
             <tr>

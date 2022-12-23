@@ -2,7 +2,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
-              <a href="index.html" class="app-brand-link">
+              <a href="/admin/" class="app-brand-link">
                 <span class="app-brand-logo demo">
                   <svg
                     width="25"
@@ -60,24 +60,24 @@
                 </span>
                 <span class="app-brand-text demo menu-text fw-bolder ms-3">Admin</span>
               </a>
-  
+
               <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
                 <i class="bx bx-chevron-left bx-sm align-middle"></i>
               </a>
             </div>
-  
+
             <div class="menu-inner-shadow"></div>
-  
+
             <ul class="menu-inner py-1">
               <!-- Dashboard -->
               <li class="menu-item active">
-                <a href="index.html" class="menu-link">
+                <a href="/admin/" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-home-circle"></i>
                   <div data-i18n="Analytics">კონსოლი</div>
                 </a>
               </li>
-  
-         
+
+
               <!-- Components -->
               <li class="menu-header small text-uppercase"><span class="menu-header-text">ბლოგი</span></li>
               <!-- Cards -->
@@ -87,14 +87,14 @@
                   <div data-i18n="Basic">ბლოგის დამატება</div>
                 </a>
               </li>
-  
+
               <li class="menu-item">
                       <a href="{{ url('blog-page')}}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-book"></i>
                         <div data-i18n="Basic">ბლოგპოსტები</div>
                       </a>
                     </li>
-             
+
               </li>
               <li class="menu-item">
                   <a href="{{ url('blog/category') }}" class="menu-link">
@@ -102,10 +102,10 @@
                     <div data-i18n="Basic">კატეგორიები</div>
                   </a>
                 </li>
-         
+
           </li>
-  
-          
+
+
               <!-- Misc -->
               <li class="menu-header small text-uppercase"><span class="menu-header-text">დახმარების ცენტრი</span></li>
               <li class="menu-item">
@@ -118,7 +118,7 @@
                   <div data-i18n="Support">დახმარება</div>
                 </a>
               </li>
-              
+
             </ul>
           </aside>
           <!-- / Menu -->

@@ -34,19 +34,19 @@
     @endif
 
         <div class="card-body">
-          <form action="{{ url('add_blog_post') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ url('edit_blog_post_confirm' , $article->id) }}" method="POST" >
 @csrf
             <div class="mb-3">
               <label class="form-label" for="basic-default-fullname">სტატიის დასახელება</label>
-              <input type="text" name="title" class="form-control" id="basic-default-fullname" placeholder="სტატიის დასახელება" />
+              <input type="text" name="title" class="form-control" id="basic-default-fullname" value="{{ $article->title }}"/>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlSelect1" class="form-label">კატეგორია</label>
-              <select class="form-select" name="category" id="exampleFormControlSelect1" aria-label="კატეგორიის არჩევა" >
+              <select class="form-select" name="category" id="exampleFormControlSelect1" >
 
                 @foreach ($blog_category as $blog_category)
 
-
+                <selected-option>{{ $article->category }}</selected-option>
                 <option value="{{ $blog_category->name }}">{{ $blog_category->name }}</option>
                 @endforeach
               </select>
@@ -58,14 +58,14 @@
                   name="body"
                   id="basic-default-message"
                   class="form-control"
-                  placeholder="სტატიის სრული აღწერილობა"
-                ></textarea>
+
+                > {{ $article->body }}</textarea>
               </div>
 
 
               <div class="mb-3">
                 <label class="form-label" for="basic-default-fullname">SEO დასახელება</label>
-                <input type="text" name="seoname" class="form-control" id="basic-default-fullname" placeholder="სტატიის დასახელება" />
+                <input type="text" name="seoname" class="form-control" id="basic-default-fullname" value="{{ $article->seoname }}" />
               </div>
 
 
@@ -75,8 +75,8 @@
                 name="metabody"
                 id="basic-default-message"
                 class="form-control"
-                placeholder="SEO აღწერილობის ადგილი"
-              ></textarea>
+
+              >{{ $article->metabody }}</textarea>
             </div>
 
             <div class="mb-3">
@@ -85,6 +85,8 @@
             </div>
 
 
+            <img src="{{ url('articleassets' , $article->image) }}" width="250px" >
+            <br><br>
 
             <button type="submit" class="btn btn-primary">დამატება</button>
           </form>

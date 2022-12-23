@@ -531,5 +531,5 @@
       </div>
       <!--/ Transactions -->
     </div>
-  
+
   <!-- / Content -->

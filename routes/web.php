@@ -17,7 +17,7 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 
-    
+
 });
 
 Route::middleware([
@@ -49,10 +49,18 @@ Route::get('/admin' , [AdminController::class , 'admin_redict']);
 // ADMIN BLOG PAGE ROUTE
 Route::get('/blog-page' , [AdminController::class , 'blog_page']);
 Route::get('/blog/add' , [AdminController::class , 'blog_page_add']);
+Route::post('/add_blog_post' , [AdminController::class , 'add_blog_post']);
+Route::get('/delete_blog_post/{id}' , [AdminController::class , 'delete_blog_post']);
+Route::get('/edit_blog_post/{id}' , [AdminController::class , 'edit_blog_post']);
+Route::post('/edit_blog_post_confirm/{id}' , [AdminController::class , 'edit_blog_post_confirm']);
 
+// BLOG CATEGORY ROUTE
 Route::get('/blog/category' , [AdminController::class , 'blog_category_page']);
 Route::post('/add_category_blog' , [AdminController::class , 'add_category_blog']);
 Route::get('/delete_blog_category/{id}' , [AdminController::class , 'delete_blog_category']);
+
+Route::get('/edit_blog_category/{id}' , [AdminController::class , 'edit_blog_category']);
+Route::post('/edit_blog_category_confirm/{id}' , [AdminController::class , 'edit_blog_category_confirm']);
 
 
 });

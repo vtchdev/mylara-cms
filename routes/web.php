@@ -54,13 +54,18 @@ Route::get('/delete_blog_post/{id}' , [AdminController::class , 'delete_blog_pos
 Route::get('/edit_blog_post/{id}' , [AdminController::class , 'edit_blog_post']);
 Route::post('/edit_blog_post_confirm/{id}' , [AdminController::class , 'edit_blog_post_confirm']);
 
+
+Route::get('/search', 'App\Http\Controllers\AdminController@search')->name('admin_search');
+
 // BLOG CATEGORY ROUTE
 Route::get('/blog/category' , [AdminController::class , 'blog_category_page']);
 Route::post('/add_category_blog' , [AdminController::class , 'add_category_blog']);
 Route::get('/delete_blog_category/{id}' , [AdminController::class , 'delete_blog_category']);
-
 Route::get('/edit_blog_category/{id}' , [AdminController::class , 'edit_blog_category']);
 Route::post('/edit_blog_category_confirm/{id}' , [AdminController::class , 'edit_blog_category_confirm']);
+
+
+Route::get('/blog/category/{id}' , [AdminController::class , 'blog_category_page_show']);
 
 
 });

@@ -55,11 +55,9 @@
                     </button>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="{{ url('edit_blog_post' , $article->id) }}"
-                        ><i class="bx bx-edit-alt me-1"></i> ჩასწორება</a
-                      >
+                        ><i class="bx bx-edit-alt me-1"></i> ჩასწორება</a>
                       <a class="dropdown-item" onClick="confirm('ნამდვილად გსურთ წაშლა?')"  href="{{ url('delete_blog_post', $article->id) }}"
-                        ><i class="bx bx-trash me-1"></i> წაშლა</a
-                      >
+                        ><i class="bx bx-trash me-1"></i> წაშლა</a>
                     </div>
                   </div>
                 </td>

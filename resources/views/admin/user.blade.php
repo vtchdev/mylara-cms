@@ -33,7 +33,7 @@
       <li>
         <a class="dropdown-item" href="#">
           <i class="bx bx-cog me-2"></i>
-          <span class="align-middle">შესწორება</span>
+          <span class="align-middle">შეცვლა</span>
         </a>
       </li>
       <li>
@@ -49,9 +49,11 @@
         <div class="dropdown-divider"></div>
       </li>
       <li>
-        <a class="dropdown-item" href="auth-login-basic.html">
+
+
+        <a class="dropdown-item" href="{{ route('logout') }}">
           <i class="bx bx-power-off me-2"></i>
-          <span class="align-middle">გასვლა</span>
+          <span class="align-middle">გამოსვლა</span>
         </a>
       </li>
     </ul>

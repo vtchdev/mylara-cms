@@ -52,14 +52,12 @@
               </select>
             </div>
 
+
+
+
             <div class="mb-3">
                 <label class="form-label" for="basic-default-message">სტატიის აღწერა</label>
-                <textarea
-                  name="body"
-                  id="basic-default-message"
-                  class="form-control"
-                  placeholder="სტატიის სრული აღწერილობა"
-                ></textarea>
+                <textarea class="ckeditor form-control"  name="body"></textarea>
               </div>
 
 

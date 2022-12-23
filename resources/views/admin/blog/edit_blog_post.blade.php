@@ -54,14 +54,8 @@
 
             <div class="mb-3">
                 <label class="form-label" for="basic-default-message">სტატიის აღწერა</label>
-                <textarea
-                  name="body"
-                  id="basic-default-message"
-                  class="form-control"
-
-                > {{ $article->body }}</textarea>
+                <textarea class="ckeditor form-control"  name="body">{{ $article->body }}</textarea>
               </div>
-
 
               <div class="mb-3">
                 <label class="form-label" for="basic-default-fullname">SEO დასახელება</label>

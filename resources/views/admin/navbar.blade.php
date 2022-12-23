@@ -14,12 +14,20 @@
             <div class="navbar-nav align-items-center">
               <div class="nav-item d-flex align-items-center">
                 <i class="bx bx-search fs-4 lh-0"></i>
+
+                <form action="{{ route('admin_search') }}" method="GET">
+
                 <input
-                  type="text"
+                  type="text" type="text"
+                  name="search"
+                  required
                   class="form-control border-0 shadow-none"
                   placeholder="ძებნა ..."
                   aria-label="ძებნა ..."
                 />
+
+            </form>
+
               </div>
             </div>
             <!-- /Search -->

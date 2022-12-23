@@ -156,4 +156,24 @@ class AdminController extends Controller
         $blog_category=blog_category::All();
         return view('admin.blog.add_category' , compact ('blog_category'));
     }
+
+    public function blog_category_page_show($id)
+    {
+
+        return view('admin.blog.category-page' , compact ('blog_category_show'));
+    }
+
+    public function admin_search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+
+        // Search in the title and body columns from the posts table
+        $articles = Article::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->orWhere('body', 'LIKE', "%{$search}%")
+            ->get();
+
+        // Return the search view with the resluts compacted
+        return view('admin.blog.serach', compact('articles'));
+    }
 }
